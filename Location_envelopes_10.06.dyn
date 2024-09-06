@@ -1,0 +1,1104 @@
+{
+  "Uuid": "16c19e56-d386-4f3a-8eb3-986b8e8efdcc",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Location_envelopes_10.06",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "Id": "ee602375a8754fd28287e23075bd03c2",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "83e7d13efddd44fb8a0d155490457860",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8a164911e5d346af9b115344ac546301",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "Id": "0f06171c712244a9865275912a6e91ae",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "767a64970d114312955269fbcf969e97",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "37e84ad964c34d71b517686879f9d59b",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 385,
+      "SelectedString": "OST_NurseCallDevices",
+      "Id": "517fd5ba06634f0ca2005b1e59a37721",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "fadc31ec5edd4be1ab272cac4195299f",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "280618e143d94371b3500b8fbc2c29c7",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "62f14b6ab5da4d5bb91a7047d54be6fc",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"CCI_Location_ID\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "b29365c6b7b94a8a930b701fb3b83d6e",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "92563d9c6f8548a98bb7f74af23d67b7",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0914c32c96ad419bba7963170fd81fff",
+          "Name": "parameterName",
+          "Description": "The name of the parameter to set.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b341905a4e494518a6dd470ca1c175b5",
+          "Name": "value",
+          "Description": "The value.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a3c05beec2a641a2b270afd77dbd0791",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.Element.SetParameterByName@string,var",
+      "Replication": "Auto",
+      "Description": "Set one of the element's parameters.\n\nElement.SetParameterByName (parameterName: string, value: var): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "2c57244680d54a1f9022e0597c41e4d0",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "1f3658fa272043e78fd7dea810ddd576",
+          "Name": "elementIntersectionResult",
+          "Description": "Results.ElementIntersectionResult",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "926a56910f6745deaf2fd0749de7f710",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Results.ElementIntersectionResult.Element",
+      "Replication": "Auto",
+      "Description": "The Element (A) which was intersected with other elements (B) in the document. \r\rVisit bimorph.com/bimorph-nodes for support\n\nElementIntersectionResult.Element: Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "70c4656857a140f0bb2c5ac2b4d84a37",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "e9dd3a954d314ad1b6330badb5ac401f",
+          "Name": "elementIntersectionResult",
+          "Description": "Results.ElementIntersectionResult",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "493b5339bc4b41399ceacdada5dd627c",
+          "Name": "Element[]",
+          "Description": "Element[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Results.ElementIntersectionResult.IntersectingElements",
+      "Replication": "Auto",
+      "Description": "A list of elements (B) which intersect with the Element (A) or an empty list if no elements intersect it. \r\rVisit bimorph.com/bimorph-nodes for support\n\nElementIntersectionResult.IntersectingElements: Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "233f09819a67474998341ea806fcc355",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "411a73e203e4494d9773a553d1b88133",
+          "Name": "elementIntersectionResult",
+          "Description": "Results.ElementIntersectionResult",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "95c4091fcc4b4f26b5d5d967d03ddf59",
+          "Name": "bool",
+          "Description": "bool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Results.ElementIntersectionResult.IsSupported",
+      "Replication": "Auto",
+      "Description": "Returns true if the Element (A) is supported by the Revit API intersection filter otherwise returns false, indicating an unsupported element. \r\rVisit bimorph.com/bimorph-nodes for support\n\nElementIntersectionResult.IsSupported: bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "faad5baa10fc4730b13d167c4baf9f48",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "9d2786da035c4878a167614ac45d9421",
+          "Name": "elementSetA",
+          "Description": "Input a list of Revit elements or LinkElements to perform the interference check.\n\nElement[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6e7805a150254c308a28740fe5659fa3",
+          "Name": "elementSetB",
+          "Description": "Input a list of Revit elements or LinkElements to test for interference against elementSetA.\n\nElement[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "07fe27a4a93f4c9b879cc27159e9e1e1",
+          "Name": "ElementIntersectionResult[]",
+          "Description": "ElementIntersectionResult[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Element.IntersectsElement@Revit.Elements.Element[],Revit.Elements.Element[]",
+      "Replication": "Auto",
+      "Description": "Finds intersections (clash detection) between two sets of elements or LinkElements. Each element in set A which intersects with any elements from set B is returned as an ElementIntersectionResult. Self-intersection is automatically prevented if the same element is found in both lists.\r\rThe node is optimized to output rapid results up to 99.5% faster than any other intersection technique. \r\rUse IsElementSupported to check that elements are supported by the node. \r\rVisit bimorph.com/bimorph-nodes for support\n\nElement.IntersectsElement (elementSetA: Element[], elementSetB: Element[]): ElementIntersectionResult[]"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 725,
+      "SelectedString": "OST_Walls",
+      "Id": "6ae57f8f55234f30b10842679d60b9ed",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2bec3330bf4c45bb8fa75ded68329153",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "5aa675a64f3d48ed8c22fc309f057095",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "38274a8cbc334d3fbdc3b8d4594648cc",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6bcb923d1e2447debc723d1a8746f8d5",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.Element.Name",
+      "Replication": "Auto",
+      "Description": "Get the Name of the Element\n\nElement.Name: string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "6fc6682b973244e29999124a63c410db",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "429d2926ebac4c7599a80e4e042c470b",
+          "Name": "list",
+          "Description": "List to filter.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b5e00c2e5fdc450881e1ae7fc0ef0765",
+          "Name": "mask",
+          "Description": "List of booleans representing a mask.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6f18f5594429431692281dec07d169ce",
+          "Name": "in",
+          "Description": "Items whose mask index is true.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fe46f2cd3ed841e7889562bff6b2654d",
+          "Name": "out",
+          "Description": "Items whose mask index is false.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSCore.List.FilterByBoolMask@var[]..[],var[]..[]",
+      "Replication": "Auto",
+      "Description": "Filters a sequence by looking up corresponding indices in a separate list of booleans.\n\nList.FilterByBoolMask (list: var[]..[], mask: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "2e786df9242b4ddfa11d773f2f4c7c0f",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "e240d3c12826498fb4f46812e9c7a828",
+          "Name": "familyType",
+          "Description": "Revit.Elements.FamilyType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c424bc2f569f4514ab74e953844fab32",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.FamilyType.Name",
+      "Replication": "Auto",
+      "Description": "Get the name of this Family Type\n\nFamilyType.Name: string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "cd3a19e9a2254031a7c62219ec986e7d",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "80e872c62ebf48979a2cdd91285e4546",
+          "Name": "TypeName",
+          "Description": "TypeName",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "64883b9c12204b84b04b417ffd948684",
+          "Name": "Name",
+          "Description": "Name",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "40a2f90987fa46d685e128a329b8d411",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "TypeName==Name;"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "5593c5a94d9d48138bb7917ee23f3a12",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7c352b95dd3347d9b1e7a40f359f0e26",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"Wall 2\";"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "abba1a39e8b34aceae223332dd38dd72",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "39775a8c2cd94a5d960ab39ff234beba",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3f60e2d931bb40179471717c98dfe366",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.WallTypes, DSRevitNodesUI",
+      "SelectedIndex": 3,
+      "SelectedString": "Wall 2",
+      "Id": "d60d423a98ad4f588d02b47c0fe39a7d",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e097b391c6f34fb59c06267a8164e4cb",
+          "Name": "Wall Type",
+          "Description": "The selected Wall Type",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All wall types available in the document."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "481442da630a4a489a4020c361bc2d4a",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "efaf28d37ff9409b8115e6fe72af869c",
+          "Name": "familyType",
+          "Description": "Revit.Elements.FamilyType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "305febf2d8694aa08cce0a55f5e7f794",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.FamilyType.Name",
+      "Replication": "Auto",
+      "Description": "Get the name of this Family Type\n\nFamilyType.Name: string"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "8a164911e5d346af9b115344ac546301",
+      "End": "6e7805a150254c308a28740fe5659fa3",
+      "Id": "1b6f5e44611d4317aa15546c4d27c71e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "37e84ad964c34d71b517686879f9d59b",
+      "End": "e240d3c12826498fb4f46812e9c7a828",
+      "Id": "d66442c416804ae98842d56225b3d8ab",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "37e84ad964c34d71b517686879f9d59b",
+      "End": "429d2926ebac4c7599a80e4e042c470b",
+      "Id": "c0bba5dd0dec4c2787ec26f8e253f2d5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "fadc31ec5edd4be1ab272cac4195299f",
+      "End": "83e7d13efddd44fb8a0d155490457860",
+      "Id": "fd7a11ac2e6844cab7d8faf6b86bdf29",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "62f14b6ab5da4d5bb91a7047d54be6fc",
+      "End": "0914c32c96ad419bba7963170fd81fff",
+      "Id": "9dbb6683071b4f7f9939de457454524f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "926a56910f6745deaf2fd0749de7f710",
+      "End": "92563d9c6f8548a98bb7f74af23d67b7",
+      "Id": "47def464c8f3434eb6aa074d74109f8d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "493b5339bc4b41399ceacdada5dd627c",
+      "End": "38274a8cbc334d3fbdc3b8d4594648cc",
+      "Id": "267babeb6d32473baf56fb84439c6523",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "07fe27a4a93f4c9b879cc27159e9e1e1",
+      "End": "1f3658fa272043e78fd7dea810ddd576",
+      "Id": "4ea73da3185a45598d7816ef9f420286",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "07fe27a4a93f4c9b879cc27159e9e1e1",
+      "End": "e9dd3a954d314ad1b6330badb5ac401f",
+      "Id": "7c6d9eb0d87c4c15a8f766dbfe5f8a78",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "07fe27a4a93f4c9b879cc27159e9e1e1",
+      "End": "411a73e203e4494d9773a553d1b88133",
+      "Id": "68242884c6834b84be33fd3a72d6ea88",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2bec3330bf4c45bb8fa75ded68329153",
+      "End": "767a64970d114312955269fbcf969e97",
+      "Id": "4f50943220d04aaa8c3aa9300a204390",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6bcb923d1e2447debc723d1a8746f8d5",
+      "End": "b341905a4e494518a6dd470ca1c175b5",
+      "Id": "0f87c05ca3284e4cbdee51e6e3ebe195",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6f18f5594429431692281dec07d169ce",
+      "End": "39775a8c2cd94a5d960ab39ff234beba",
+      "Id": "65e01ebf104748608fd19eca4263414f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c424bc2f569f4514ab74e953844fab32",
+      "End": "80e872c62ebf48979a2cdd91285e4546",
+      "Id": "3003056262d144b194b186cb9e3733e7",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "40a2f90987fa46d685e128a329b8d411",
+      "End": "b5e00c2e5fdc450881e1ae7fc0ef0765",
+      "Id": "94e07a305474450a85da82412667a93e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "3f60e2d931bb40179471717c98dfe366",
+      "End": "9d2786da035c4878a167614ac45d9421",
+      "Id": "4fa05d5387dc424d9d636e05f26cfd8a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e097b391c6f34fb59c06267a8164e4cb",
+      "End": "efaf28d37ff9409b8115e6fe72af869c",
+      "Id": "0328e665c5d14ef38f7da9a0f1b3c034",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "305febf2d8694aa08cce0a55f5e7f794",
+      "End": "64883b9c12204b84b04b417ffd948684",
+      "Id": "cb67caf154f54f3d9c11299f36197ba5",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "bimorphNodes",
+      "Version": "4.0.3",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "2c57244680d54a1f9022e0597c41e4d0",
+        "70c4656857a140f0bb2c5ac2b4d84a37",
+        "233f09819a67474998341ea806fcc355",
+        "faad5baa10fc4730b13d167c4baf9f48"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.13",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "2.0",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.18.1.5096",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "ee602375a8754fd28287e23075bd03c2",
+        "Name": "All Elements of Category Nurse Call",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -251.86455127418139,
+        "Y": 310.86085229837028
+      },
+      {
+        "Id": "0f06171c712244a9865275912a6e91ae",
+        "Name": "All Elements of Category Walls",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -189.05407790372635,
+        "Y": 173.94316006122722
+      },
+      {
+        "Id": "517fd5ba06634f0ca2005b1e59a37721",
+        "Name": "Categories",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -544.71938423404833,
+        "Y": 310.86085229837028
+      },
+      {
+        "Id": "280618e143d94371b3500b8fbc2c29c7",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2965.67854195961,
+        "Y": 242.16253008441515
+      },
+      {
+        "Id": "b29365c6b7b94a8a930b701fb3b83d6e",
+        "Name": "Element.SetParameterByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3318.0188743589715,
+        "Y": 205.16720154875998
+      },
+      {
+        "Id": "2c57244680d54a1f9022e0597c41e4d0",
+        "Name": "ElementIntersectionResult.Element",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2335.9233550719196,
+        "Y": 56.562809595211775
+      },
+      {
+        "Id": "70c4656857a140f0bb2c5ac2b4d84a37",
+        "Name": "ElementIntersectionResult.IntersectingElements",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2330.2693162407659,
+        "Y": 298.15224879944378
+      },
+      {
+        "Id": "233f09819a67474998341ea806fcc355",
+        "Name": "ElementIntersectionResult.IsSupported",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2339.6927142926888,
+        "Y": 551.04976566598384
+      },
+      {
+        "Id": "faad5baa10fc4730b13d167c4baf9f48",
+        "Name": "Element.IntersectsElement",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1745.5540573234478,
+        "Y": 308.27480701822981
+      },
+      {
+        "Id": "6ae57f8f55234f30b10842679d60b9ed",
+        "Name": "Categories",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -548.90891086359329,
+        "Y": 173.94316006122722
+      },
+      {
+        "Id": "5aa675a64f3d48ed8c22fc309f057095",
+        "Name": "Element.Name",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2976.8672617801039,
+        "Y": 388.45005937275744
+      },
+      {
+        "Id": "6fc6682b973244e29999124a63c410db",
+        "Name": "List.FilterByBoolMask",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1059.2999389671559,
+        "Y": -79.204123391424446
+      },
+      {
+        "Id": "2e786df9242b4ddfa11d773f2f4c7c0f",
+        "Name": "FamilyType.Name",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 283.14161615107338,
+        "Y": -270.92653632132743
+      },
+      {
+        "Id": "cd3a19e9a2254031a7c62219ec986e7d",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 699.4812577994162,
+        "Y": -266.15283387362695
+      },
+      {
+        "Id": "5593c5a94d9d48138bb7917ee23f3a12",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 131.11172928578139,
+        "Y": -511.85091035255442
+      },
+      {
+        "Id": "abba1a39e8b34aceae223332dd38dd72",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1321.3252729259873,
+        "Y": -79.902430365699786
+      },
+      {
+        "Id": "d60d423a98ad4f588d02b47c0fe39a7d",
+        "Name": "Wall Types",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 123.7523286472599,
+        "Y": -70.931981272171583
+      },
+      {
+        "Id": "481442da630a4a489a4020c361bc2d4a",
+        "Name": "FamilyType.Name",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 397.37210004846213,
+        "Y": -72.806477277143813
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "8d113037f8c44d039c8cb5819b618f86",
+        "Title": "NODE DETAILS",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "3cc2d4395b6d4e2cbd182dcf63a30cdf",
+          "4c85c0b9c74f4b46841117ee28d23fcd",
+          "9831bc92e7d74ff6acb3b4e2bca4c94c",
+          "b97f855c378c465794eff37abd92b507"
+        ],
+        "HasNestedGroups": false,
+        "Left": -3748.5724796027948,
+        "Top": -679.20727030659793,
+        "Width": 322.72663216861156,
+        "Height": 603.26753378797537,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -606.20727030659793,
+        "InitialHeight": 482.26753378797537,
+        "TextblockHeight": 63.0,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "659791b65f074967b83154e740b4fe36",
+        "Title": "Alt andet end denne grønne farve kan ignoreres",
+        "DescriptionText": "<Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "ead95e4352c544b5b623548ad34a6a89"
+        ],
+        "HasNestedGroups": false,
+        "Left": -3151.3840234486834,
+        "Top": -509.11572346533922,
+        "Width": 314.0,
+        "Height": 353.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -306.11572346533922,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 193.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "3cc2d4395b6d4e2cbd182dcf63a30cdf",
+        "Title": "AUTHOR + COPYRIGHT\r\n________________________________________________________\r\n\r\nCopyright 2021 Bimorph Consultancy LTD \r\nThomas Mahon",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": -3737.9183305617366,
+        "Top": -504.73102382793991,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "4c85c0b9c74f4b46841117ee28d23fcd",
+        "Title": "CONTACT\r\n________________________________________________________\r\n\r\nwww.bimorph.com\r\n\r\ninfo@bimorph.com\r\n@bimorphBIM",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": -3738.5444661781316,
+        "Top": -397.61749132019293,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "9831bc92e7d74ff6acb3b4e2bca4c94c",
+        "Title": "PACKAGE NAME\r\n________________________________________________________\r\n\r\nbimorphNodes",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": -3738.5724796027948,
+        "Top": -598.20727030659793,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "b97f855c378c465794eff37abd92b507",
+        "Title": "FOLLOW US\r\n________________________________________________________\r\n\r\nFollow us to get the latest digital engineering news & be the first to hear about bimorphNodes updates:\r\n\r\nFACEBOOK:  facebook.com/bimorphBIM\r\nLINKEDIN:  linkedin.com/company/bimorph-bim\r\nTWITTER:  @bimorphBIM",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": -3734.8458474341833,
+        "Top": -260.93973651862257,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "3172379e6bfd4bffa46a1b325d13364b",
+        "Title": "Input list of elements to clash. Note that BimorphNodes LinkElement's can also be input.",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": -3742.0272681200408,
+        "Top": -16.403674388028833,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "796988f8baa94c7bbb950878c6b9434f",
+        "Title": "Use the ElementIntersectionResult query nodes to interrogate the results.",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": -3735.5240984490483,
+        "Top": 60.842817099405693,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "ead95e4352c544b5b623548ad34a6a89",
+        "Title": "problematikker:\r\nbygningsdele beholder navn fra forrige intersect, indtil de bliver overskrevet. Derfor vil et objekt der intersecter to forskellige, bare beholde den seneste værdi af de to. Og de objekter der liggerudenfor alle, beholder bare den seneste de modtog.\r\n2: intersect er nok, behøves ikke at være 100% indenfor",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": -3141.3840234486834,
+        "Top": -298.11572346533922,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -2235.7503993027772,
+    "Y": 210.93863566139916,
+    "Zoom": 0.9106190400662233
+  }
+}

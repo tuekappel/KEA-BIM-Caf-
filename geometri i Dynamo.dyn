@@ -1,0 +1,459 @@
+{
+  "Uuid": "fe291e9e-77f3-43c5-a9e2-c52a4b5f0bf3",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "geometri i Dynamo",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "a53c093fc2714f599f3590b644e09450",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "5ad5c570e8bc4f4ab027549523d8cba9",
+          "Name": "points",
+          "Description": "Points for nurbs curve\n\nPoint[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d8f5482bc2d04f3cae190c0e5407d8f1",
+          "Name": "NurbsCurve",
+          "Description": "Nurbscurve created from points",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.NurbsCurve.ByControlPoints@Autodesk.DesignScript.Geometry.Point[]",
+      "Replication": "Auto",
+      "Description": "Create a BSplineCurve by using explicit control points. NOTE 1: BSplineCurves with deg=1 have G1 discontinuities, which cause problems for extrusion, sweep, and other operations. They should be avoided. Use a PolyCurve instead. NOTE 2: If the curve is periodic (closed), then the first and last points MUST be the same.\n\nNurbsCurve.ByControlPoints (points: Point[]): NurbsCurve"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "fdf12baa440847febeefa886718b0abe",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "cb181fa1548c449ba70dfee7628291a9",
+          "Name": "x",
+          "Description": "x",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6617f5c69fd94ccea4ae104f5e4dc63e",
+          "Name": "y",
+          "Description": "y",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "99d770e396584a148bb9f3a7c34c8392",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "Point.ByCoordinates(x,y*60,0);"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "7ac6c302e0dc44cd9c17c50acf61133b",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d9e010c48f0d42c589ec1256b2129c19",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2b15bda2141e44bc94aad899d95fa4d5",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "[0..720..#21];\n[0..0..#21];"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "c2f73557f1fe432b976c58711b79e3cc",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "d1c127351d6f48a6aac7f32b5b79c867",
+          "Name": "angle",
+          "Description": "Angle in degrees to take the sine of.\n\ndouble",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b989e098b58c45ae96bd1e8bfcd4d5df",
+          "Name": "double",
+          "Description": "Sine of the angle.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSCore.Math.Sin@double",
+      "Replication": "Auto",
+      "Description": "Finds the sine of an angle.\n\nMath.Sin (angle: double): double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "73c1eb1af8ed400293798919c121d230",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e58cebac9dd14b2499498052629279f6",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "80;"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "cb8a089f50fc4c3ebdfe12f03a36ff1b",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "b6e08aa7b2184540ab7e0130fd84e7e3",
+          "Name": "vector",
+          "Description": "Autodesk.DesignScript.Geometry.Vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "196933d79475413abc95e3c87ba501f5",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Vector.Y",
+      "Replication": "Auto",
+      "Description": "Get the Y value of a vector.\n\nVector.Y: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "85f488d3b4f74d71be5da77b4a979cfe",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "a5c79643905d44a390def8bc379d2f63",
+          "Name": "curve",
+          "Description": "Autodesk.DesignScript.Geometry.Curve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ebb07261011347d78eaebd212bb0ae9d",
+          "Name": "distance",
+          "Description": "The distance to extrude the curve\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6729cd6ce8b446e1929c38eb2998b739",
+          "Name": "Surface",
+          "Description": "The extruded Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Curve.Extrude@double",
+      "Replication": "Auto",
+      "Description": "Extrudes a Curve in the normal Vector direction\n\nCurve.Extrude (distance: double = 1): Surface"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "dc52ab7fa81b421285bd2959320bcf94",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "2730b1c8e0674c988e6b21db25f8e68d",
+          "Name": "surface",
+          "Description": "Autodesk.DesignScript.Geometry.Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6481536578eb4a70b1456360cd13104d",
+          "Name": "thickness",
+          "Description": "Amount to thicken\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e8fecc659ba7433e964a12eb6b79ed6e",
+          "Name": "Solid",
+          "Description": "Thickened surface as solid",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Surface.Thicken@double",
+      "Replication": "Auto",
+      "Description": "Thicken Surface into a Solid, extruding in the direction of Surface normals on both sides of the Surface.\n\nSurface.Thicken (thickness: double = 1): Solid"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "d8f5482bc2d04f3cae190c0e5407d8f1",
+      "End": "a5c79643905d44a390def8bc379d2f63",
+      "Id": "2b9bce8ec1cf44d4af39f876b9836143",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "99d770e396584a148bb9f3a7c34c8392",
+      "End": "5ad5c570e8bc4f4ab027549523d8cba9",
+      "Id": "757ea06f0c2d475cb2f9113d95804c82",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d9e010c48f0d42c589ec1256b2129c19",
+      "End": "d1c127351d6f48a6aac7f32b5b79c867",
+      "Id": "92ed9b0e508d4cf981d43326d7471138",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d9e010c48f0d42c589ec1256b2129c19",
+      "End": "cb181fa1548c449ba70dfee7628291a9",
+      "Id": "356f193cb860474a961879bdea6db1b2",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "b989e098b58c45ae96bd1e8bfcd4d5df",
+      "End": "6617f5c69fd94ccea4ae104f5e4dc63e",
+      "Id": "44b1dbf437c44c65a85f5dccdfcbfa0b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e58cebac9dd14b2499498052629279f6",
+      "End": "ebb07261011347d78eaebd212bb0ae9d",
+      "Id": "cf9f369f76524ac6a86f7b5ae37c1f3f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e58cebac9dd14b2499498052629279f6",
+      "End": "6481536578eb4a70b1456360cd13104d",
+      "Id": "d41fb1732fd74336897476eb13c791fc",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6729cd6ce8b446e1929c38eb2998b739",
+      "End": "2730b1c8e0674c988e6b21db25f8e68d",
+      "Id": "7acf21d02d954007973ab4c7ec380c4e",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.18",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.18.1.5096",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -158.57095336914063,
+      "EyeY": 153.99702453613281,
+      "EyeZ": -1.9185066223144531,
+      "LookX": 312.53042602539063,
+      "LookY": -156.06440734863281,
+      "LookZ": 36.6551399230957,
+      "UpX": 0.24027490615844727,
+      "UpY": 0.970295786857605,
+      "UpZ": 0.028180511668324471
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "a53c093fc2714f599f3590b644e09450",
+        "Name": "NurbsCurve.ByControlPoints",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 283.96581340698276,
+        "Y": 161.67270642236156
+      },
+      {
+        "Id": "fdf12baa440847febeefa886718b0abe",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -171.42368713229513,
+        "Y": 162.74836431946528
+      },
+      {
+        "Id": "7ac6c302e0dc44cd9c17c50acf61133b",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -806.5548612462776,
+        "Y": 44.369601870347481
+      },
+      {
+        "Id": "c2f73557f1fe432b976c58711b79e3cc",
+        "Name": "Math.Sin",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -520.42291151533664,
+        "Y": 225.10517110809735
+      },
+      {
+        "Id": "73c1eb1af8ed400293798919c121d230",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 375.02957496551119,
+        "Y": 402.99726661174844
+      },
+      {
+        "Id": "cb8a089f50fc4c3ebdfe12f03a36ff1b",
+        "Name": "Vector.Y",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 458.165282562543,
+        "Y": 571.67755244556747
+      },
+      {
+        "Id": "85f488d3b4f74d71be5da77b4a979cfe",
+        "Name": "Curve.Extrude",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 682.43006617949186,
+        "Y": 268.20245557248074
+      },
+      {
+        "Id": "dc52ab7fa81b421285bd2959320bcf94",
+        "Name": "Surface.Thicken",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1055.9310899579145,
+        "Y": 267.91110393376488
+      }
+    ],
+    "Annotations": [],
+    "X": 361.2507036793362,
+    "Y": 346.59341574926748,
+    "Zoom": 0.794725405932843
+  }
+}

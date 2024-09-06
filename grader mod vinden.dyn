@@ -1,0 +1,217 @@
+{
+  "Uuid": "192bcce3-cd8a-41f8-909c-69634fc22c12",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "grader mod vinden",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "98cc69ef-64ae-4b1f-b38d-7eede4e9dd44-000011ab"
+      ],
+      "Id": "0f22e649406e4d46a5420ae729ee5831",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b7a9f2448a6e45f6b124aaa523565f66",
+          "Name": "Element",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a model element from the document."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "64b966b712e84d24a5cb9e3c88584692",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "0e32f555bbbf4ff0adf0262a12bbf273",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f028d5f4093549c9a650eeeacdfbcd38",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"v_v\";\n15;"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "85fcaf0f507f451f9436361a5e9dac18",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "d1a65e73fd9c46ceac6e1a585fadd1a8",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2f9af5a32bce44298b81d6d5bee7ed6f",
+          "Name": "parameterName",
+          "Description": "The name of the parameter to set.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "be299c252a6a46b8adba7977cc722422",
+          "Name": "value",
+          "Description": "The value.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e8a61609ca1a475ba9e33c3898c78086",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.Element.SetParameterByName@string,var",
+      "Replication": "Auto",
+      "Description": "Set one of the element's parameters.\n\nElement.SetParameterByName (parameterName: string, value: var): Element"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "b7a9f2448a6e45f6b124aaa523565f66",
+      "End": "d1a65e73fd9c46ceac6e1a585fadd1a8",
+      "Id": "cb10d04060d549acad838a27a6698f80",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0e32f555bbbf4ff0adf0262a12bbf273",
+      "End": "2f9af5a32bce44298b81d6d5bee7ed6f",
+      "Id": "5eb98786a3834f699fa547db8ecc8eab",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f028d5f4093549c9a650eeeacdfbcd38",
+      "End": "be299c252a6a46b8adba7977cc722422",
+      "Id": "c1c4a51a95ce4c62ad7a34967be3982f",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.18",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.18.1.5096",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "0f22e649406e4d46a5420ae729ee5831",
+        "Name": "Select Model Element",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 126.0,
+        "Y": 159.0
+      },
+      {
+        "Id": "64b966b712e84d24a5cb9e3c88584692",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -73.903260133008189,
+        "Y": 470.64515744779766
+      },
+      {
+        "Id": "85fcaf0f507f451f9436361a5e9dac18",
+        "Name": "Element.SetParameterByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 179.5797546184873,
+        "Y": 542.764068368127
+      }
+    ],
+    "Annotations": [],
+    "X": 316.5219268407597,
+    "Y": -59.624903214810161,
+    "Zoom": 0.873239338949518
+  }
+}

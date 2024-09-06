@@ -1,0 +1,253 @@
+{
+  "Uuid": "3e40faff-69d1-4adc-8985-12869c809e31",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "find højeste værdi",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "4c256fdaff8d4525afe488e18dab3849",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b3cae58eba3049a6bed60403d86779a9",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "[[2,6,9,18,5],[2,6,9,1,5],[2,6,9,1,5],[6.1,6,6,1,5],[2,6,9,11,5]];"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "e1f60ab3d4dd42aebc647601769d542d",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "5c0152a3ce03489684d26c6b218fe8ad",
+          "Name": "list",
+          "Description": "List of items to be sorted\n\ndouble[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": true,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e99e4df28e9a4c618c1d5e6062f6d61b",
+          "Name": "int[]",
+          "Description": "The indices of the items in the sorted list",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSCore.List.SortIndexByValue@double[]",
+      "Replication": "Auto",
+      "Description": "Sorts a list by the items and return their indices.\n\nList.SortIndexByValue (list: double[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "738fbe612fb74b5383c73bb611478474",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "2d2811751f1e47be822fc9780abf88a8",
+          "Name": "list",
+          "Description": "List to fetch an item from.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": true,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d44266ac46484aee88c3e6328c1dabdb",
+          "Name": "index",
+          "Description": "Index of the item to be fetched.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": true,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "dffbf1a60d774ea29972fe52c1a69ca3",
+          "Name": "item",
+          "Description": "Item in the list at the given index.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSCore.List.GetItemAtIndex@var[]..[],int",
+      "Replication": "Auto",
+      "Description": "Returns an item from the given list that's located at the specified index.\n\nList.GetItemAtIndex (list: var[]..[], index: int): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "3d483ffe49ff4f77b1c309cc1f4293c7",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "dacba27cc67a4c498c989d7627184c38",
+          "Name": "list",
+          "Description": "List to get the last item of\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": true,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fd10e82505d043b4955e40c01602bb04",
+          "Name": "item",
+          "Description": "Last item in the list",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSCore.List.LastItem@var[]..[]",
+      "Replication": "Auto",
+      "Description": "Retrieves the last item in a list.\n\nList.LastItem (list: var[]..[]): var[]..[]"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "b3cae58eba3049a6bed60403d86779a9",
+      "End": "5c0152a3ce03489684d26c6b218fe8ad",
+      "Id": "ca2bffd721f24073b4ef75e18b18315c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "b3cae58eba3049a6bed60403d86779a9",
+      "End": "2d2811751f1e47be822fc9780abf88a8",
+      "Id": "7625b65ef6f64c73ae52dab2ac5513ee",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e99e4df28e9a4c618c1d5e6062f6d61b",
+      "End": "d44266ac46484aee88c3e6328c1dabdb",
+      "Id": "742acb44a9904c6cb0d34063c9f685f4",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "dffbf1a60d774ea29972fe52c1a69ca3",
+      "End": "dacba27cc67a4c498c989d7627184c38",
+      "Id": "c5d74e676c1a43c1af6f73812ad17eda",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.18",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.18.1.5096",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "4c256fdaff8d4525afe488e18dab3849",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 290.0,
+        "Y": 188.0
+      },
+      {
+        "Id": "e1f60ab3d4dd42aebc647601769d542d",
+        "Name": "List.SortIndexByValue",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 989.74036413364024,
+        "Y": 350.44464659683513
+      },
+      {
+        "Id": "738fbe612fb74b5383c73bb611478474",
+        "Name": "List.GetItemAtIndex",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1333.8022509316665,
+        "Y": 188.910091542204
+      },
+      {
+        "Id": "3d483ffe49ff4f77b1c309cc1f4293c7",
+        "Name": "List.LastItem",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1623.7009356654362,
+        "Y": 190.99656732966383
+      }
+    ],
+    "Annotations": [],
+    "X": 5.7426667931487145,
+    "Y": 31.399416211930088,
+    "Zoom": 0.77087948042731291
+  }
+}
